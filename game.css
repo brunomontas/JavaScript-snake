@@ -1,0 +1,20 @@
+body {
+    background-color: #263238;
+    color:#00e676;
+    font-family: 'PT Sans', sans-serif;
+}
+
+h1 {
+    font-family: 'VT323', monospace;
+    font-size: 5em;
+}
+
+.header {
+    text-align: center;
+}
+
+#game {
+    width: 200px;
+    height: 200px;
+    background-color: #000;
+}
