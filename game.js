@@ -1,12 +1,13 @@
-/** CONSTANTS **/
+//https://medium.freecodecamp.org/think-like-a-programmer-how-to-build-snake-using-only-javascript-html-and-css-7b1479c3339e
 
+/** CONSTANTS **/
 const CANVAS_BACKGROUND_COLOUR = 'black'
 const SNAKE_COLOUR = 'lightgreen';
 const gameScreen = document.getElementById('game');
 
     
 // Return a two dimensional drawing context
-var ctx = gameScreen.getContext("2d");
+let ctx = gameScreen.getContext("2d");
 //  Select the colour to fill the canvas
 ctx.fillStyle = CANVAS_BACKGROUND_COLOUR;
 // Draw a "filled" rectangle to cover the entire canvas
@@ -19,10 +20,11 @@ var State = class State {
     }
 
     initialize() {
-        this.snake = new Snake(Math.floor(gameScreen.width*Math.random()), Math.floor(gameScreen.height*Math.random()));
+        this.snake = new Snake(Math.floor((gameScreen.width - 10)*Math.random()), Math.floor((gameScreen.height - 10)*Math.random()));
     }
-}
 
+    
+}
 
 var Snake = class Snake {
     constructor(x, y) {
@@ -38,14 +40,21 @@ var Snake = class Snake {
         ctx.fillRect(this.x, this.y, 10, 10);
 
     }
-}
-
-function main() {
-    let state = new State();
 
 }
 
-main();
+function start() {
+    setInterval(function step() {
+        ctx.fillStyle = CANVAS_BACKGROUND_COLOUR;
+        ctx.fillRect(0, 0, gameScreen.width, gameScreen.height);
+        let state = new State();
+      }, 100);
+
+}
+
+start();
+
+
 
 
 
